@@ -1,0 +1,626 @@
+
+***Everything in python is object***
+***Every object contains set of methods ***
+
+
+objects in python
+-------------------
+
+number
+-----
+number can be integer or decimal or octal or hexa
+
+val = 10
+aval = 34.43
+
+
+string
+-------
+string can be defined in single or double or triple quotes.
+
+name = 'python programming'
+aname = "unix shell scripting"
+bname = """java programming"""
+cname  = 'ab'
+
+list   ( array in C)
+----
+list is set of elements
+elements can be set of numbers or strings or combination
+list elements are defined in []
+
+alist = [ 10,20,30,10,10]
+blist = ["unix","java","spark"]
+clist = [10,20,30,"java","oracle"]
+
+
+tuple ( READ ONLY )
+------
+tuple  is set of elements
+Elements can be set of numbers or strings or combination
+tuple elements are defined in () .
+****** Elements inside tuple cannot be modified ******
+
+atup = (10,20,56,53.35,10)
+btup = ('spark','scala','java',ruby')
+ctup = (10,20,45.4,'spark','oracle')
+
+
+dictionary ( hash or map in perl )
+-----------
+dictionary contains elements in the form of keys and values.
+dictionary elements are defined in {}.
+In dictionary , keys are always UNIQUE
+
+syntax :    object = { key:value , key:value , key:value }
+example:      book = {"chap1":10 , "chap2":20 ,"chap3":30 ,"chap1":100}
+                   = {"chap1":[10,"UK","Mark"] , "chap2":[20,"AUS","Peter"]}
+
+
+
+
+set
+-----
+set is unordered collection of UNIQUE values.
+set elements are defined in {}.
+
+aset = {10,10,10,10,20}
+
+
+
+classification of objects
+---------------------------
+
+mutable objects
+----------------
+list
+dictionary
+set
+
+
+immutable objects
+-------------------
+string
+number
+tuple
+
+commenting in python
+--------------------
+
+single line comment  ( #) 
+
+multi line comment
+--------------------
+All the lines defined in between ''' and ''' are ignored by interpreter
+
+'''
+all these lines
+are ignored
+
+'''
+
+"""
+ignored
+"""
+
+
+
+display all the builtin functions & exceptions
+------------------------------------------------
+
+
+dir(__builtins__)
+
+
+
+
+methods & functions
+
+
+methods :  methods are object specific.
+           string methods are different to list methods
+           All the methods are accessed with .  (   name.upper() )
+
+functions: All the functions are common for all the objects
+    
+
+print()
+len()
+range()
+dir()
+help()    : just like man in linux
+input()   : capturing the input from keyboard
+max()     : largest number    m
+min()     : smallest number
+sum()     : sum of all the values
+zip()     : combining 2 lists
+open()    : opening the file      Eg :       open(filename,"w")
+type()    : class of object
+id()      : unique reference of any object
+isinstance() : will return True or False
+
+typecasting
+----------
+int()
+oct()
+float()
+hex()
+str()
+list()
+tuple()
+dict()
+set()
+
+
+
+operators
+----------
+
+arithemtic operators : + - * % /
+
+logical operators    :  and   or   not
+
+                        if name.isupper()   and len(name) > 0 
+                        if not name.isupper()
+
+
+relational operators  : <   <=  >    >=    ==     !=
+
+assignment operators (  ++ and -- are NOT allowed in python )
+------------------------
+val = 10
+val +=10   (or)  val = val + 10
+val *=10   (or)  val = val * 10
+
+
+special operators   :     in
+                          as ( used in libraries and exception handling)
+ 
+                          if 'python' in 'python programming';
+                          if 10 in [10,20,20]
+                          if 'chap1' in book
+
+
+
+
+file handling
+--------------
+
+working with flat files  ( .csv  .txt .conf .log   ... )
+---------------------------
+
+opening the file
+------------------
+syntax  :     object = open(filename, mode )
+example :       fobj = open("clients.txt","r")     # read mode
+                fobj = open("clients.txt","w")     # write mode
+                case1: If the file is already existing.. it will overwrite the content of the file
+                case2: If the file  is not existing ... new file will be created
+                  
+                fobj = open("clients.txt","a")     # append mode
+                case1: If the file is already existing.. it will append the content to the file
+                case2: If the file  is not existing ... new file will be created
+
+	        fobj = open("C:\\Users\\abc\\clients.txt","r")  (or)
+	        fobj = open("C:/Users/abc/clients.txt","r")     (or)
+	        fobj = open(r"C:\Users\abc\clients.txt","r")  
+
+closing the file
+-----------------
+fobj.close()
+
+
+
+
+
+
+
+working with third party files (  docx pdf ppt xlsx  ..... )
+
+
+
+
+
+
+
+
+
+
+
+
+exception handling
+-------------------
+
+
+Basically there are 2 types of errors
+
+1. syntax error
+2. runtime error
+
+Handling the exceptions in the runtime is known as exception handling
+
+
+try
+except
+else
+finally ( optional )
+raise   ( optinal )
+
+
+
+
+
+
+
+
+library (or) package (or) module
+-------------------------------
+Every library contains set of methods defined by someone else.
+
+
+importing a library   ( importing all the methods )
+--------------------
+import math 
+print(math.floor(34.4))
+print(math.log(3)) 
+
+importing required methods only    ( . is NOT required since we are importing methods only )
+---------------------------------
+from math import floor,log,ceil
+print(floor(367.4))
+print(log(3))
+
+
+importing with alias name
+---------------------------
+import math as m
+print(m.floor(33.45))
+
+
+importing everything without .
+-----------------------------
+from math import *
+print(floor(367.4))
+print(log(3))
+
+
+
+There are 2 types of libraries
+
+1. builtin libraries
+--------------------
+All the builtin libraries( logging, math, ftp , zipping ,smtp... )
+ are installed with python by default.
+
+path : C:\Users\Rivatech\Anaconda3\Lib
+
+
+os         : os level activities
+math     
+sys        :  sys and python config data
+shutil     : copy,move, rmtree  etc
+urllib     : read the web, downloading the files
+logging    : logging all the events
+smtplib    : sending the mails
+ftplib     : performing ftp operations
+sysconfig  :  sys and python config data
+zipfile    : create/extract the zip files
+rarfile    : create/extract the rar files
+cryptopgraphy : encrypting and decrypting the data or files
+tarfile    : create/extract the tar files
+filecmp    : comparing files or directories
+sqlite3    : python default database
+csv        : reading/writing csv files
+xml        : reading/writing xml files
+calendar   : display month,year calendar info
+datetime   : working with date n time
+time       : working with date n time 
+fractions  : working with decimal values
+glob       : display all the files
+heapq      : more of array operations ( getting largest among list )
+subprocess : executing system commands in python (  subprocess.getoutput("ls -ltr") 
+pdb        : python debugger
+platform   : platform information
+random     : random operations ( shuffling , random digit ... )
+re         : grep + awk + sed
+socket     : networking programming
+stat       : stats of the file
+statistics : basic statistics
+telnetlib  : accessing remote servers  
+threading      :
+multiprocessing:   
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. third party libraries
+------------------------
+Depending on the requirement( cloud integration , excel, db ,web scraping )
+, developer has to install the third party library
+
+path : C:\Users\Rivatech\Anaconda3\Lib\site-packages
+
+
+
+
+Installing third party libraries
+-------------------------------
+
+
+cx_Oracle 
+
+
+import cx_Oracle  ( check whether the library is 
+                       available or not )
+
+
+
+
+installing library
+------------------
+- Using pip tool
+- Using easy_install tool
+- Installing manually
+
+
+using pip tool
+-----------------
+either in Anaconda console  or  anaconda prompt ( check in start menu )
+
+pip install cx_Oracle == 1.3.4
+
+
+Installing all the libraries at a time
+----------------------------------------
+create any file ( requirements.txt ) containing 
+all the library names
+
+open Anaconda prompt and type the below
+
+pip install -r requirements.txt
+
+python install pymysql == 0.4.4
+
+pip list    ( will display all the libraries )
+
+pip uninstall libraryname  ( will remove the library)
+
+pip list --outdated   ( will display existing and
+                            current version )
+
+
+
+Installing manually
+-----------------------
+- Download the tar file from www.pypi.org
+
+- extract and nagivate to the respective folder
+
+  Execute the below command to install
+- python setup.py install
+
+
+
+
+
+
+
+In C
+--------
+
+int display(int a , int b )
+{
+	int c = a + b ;
+	return c;
+}
+
+
+total = display(10,20)
+
+
+
+In python
+---------
+
+def display(a,b):
+    c = a +b
+    return c
+total = display(10,20)
+######################################
+def display(a,b):
+    c = a +b
+    return 10,20
+
+
+total = display(10,20)
+
+
+
+
+
+
+
+re
+---
+-search ( anywhere in the string )
+-match ( at the beginning of the string)   ^
+-sub  ( substituting the patterns with some string)
+-findall
+
+
+wildcard characters (or) metacharacters
+-----------------------------------------
+^  : match at the beginning of the string
+     if re.search("^python",line)
+     if re.match("python",line)
+
+$  : match at the end of the string
+     if re.search("python$",line)
+
+.  : any single character or digit or symbol
+     if re.search(.ython",line)
+
+*  : zero or more occurences of the preceding char
+     if re.search("pyt*hon",line)
+      python        --> valid
+      pytttthon     --> valid
+      pytttttttthon --> valid
+      pyhon         --> valid
+
++  :  one or more occurences of the preceding char
+      python        --> valid
+      pytttthon     --> valid
+      pytttttttthon --> valid
+      pyhon         --> Invalid
+
+?  : either zero or one occurence of the preceding
+      python        --> valid
+      pytttthon     --> Invalid
+      pytttttttthon --> Invalid
+      pyhon         --> Valid
+
+() :  (perl|python)
+      if re.search("perl|python", line)
+
+[] :  any single character or digit or symbol
+      if re.search("[aqwerty]ython", line)         # will match only aython or qython wython o eython......
+
+{}  : { min, max} occurences of the preceding character
+      if re.search("pyt{2,5}hon", line)
+
+
+\d    :  any single digit
+\d{3} :  3 digited number
+\s    :  any white space
+\w    : word boundary
+
+
+
+
+
+display all the databases
+--------------------------
+show databases ;
+
+create database
+-----------------
+create database jpmc ;
+
+accesing your database
+-------------------------
+use jpmc ;
+
+display all the databases
+--------------------------
+show databases ;
+
+display all the tables
+-----------------------
+show tables ;    ( empty)
+
+create table
+-----------
+create table realestate ( street varchar(100) , city varchar(100) ) ;
+
+inserting records
+-----------------
+insert into realestate values('101 MG Road','Bangalore');
+insert into realestate values('105 GT Road','Hyderabad');
+
+display all the records
+------------------------
+select * from realestate;
+
+display the table structure 
+-----------------------------
+desc realestate'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+database-  database library
+-----------------------------
+Oracle  -  cx_Oracle
+Mysql   -  pymysql
+db2     -  db2
+MongoDB -  pymongo
+SQLserver- pymssql
+SQLite   - sqlite3  ( python default database )
+
+
+
+class & object
+--------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
